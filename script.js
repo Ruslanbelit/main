@@ -1,59 +1,26 @@
 //Задание 1
 
 console.log("Задание 1");
-let a = 0;
-while (a < 100) {
-    let check = true;
-    for (let i = 2; i < a; i++) {
-        if (a % i === 0) {
-            check = false;
-            break;
-        }
-    }
-    if (check) console.log(a);
-    a++;
+var max = 999;
+var calculation = {
+    число: +prompt("Введите число от 0-999"),
+    еденицы: 0,
+    десятки: 0,
+    сотни: 0,
+};
+if (calculation.число <= 9){
+    calculation.число = calculation.еденицы;
+} 
+else if (calculation.число <= 999){
+    calculation.сотни = Math.floor(calculation.число / 100 % 10);
+    calculation.десятки = Math.floor(calculation.число / 10 % 10);
+    calculation.еденицы = Math.floor(calculation.число % 10);
 }
-
-
-
-//Задание 2
-
-console.log("Задание 2");
-let basket = [
-    {
-        product: "карандаш",
-        price: getNumber(50, 100)
-    },
-    {
-        product: "бумага",
-        price: getNumber(50, 100)
-    },
-    {
-        product: "ручка",
-        price: getNumber(50, 100)
-    },
-    {
-        product: "файл",
-        price: getNumber(50, 100)
-    }
-];
-let basketPrice = 0;
-for (let prod of basket) {
-    basketPrice += prod.price;
-    console.log("Номенклатура " + prod.product + " стоимость: " + prod.price);
+else {
+    calculation.число = 0;
+    console.log("Введено неверное число");
 }
-console.log("Стоимость корзины: " + basketPrice + " р");
+console.log(calculation);
 
+/*2. Для игры, реализованной на уроке, добавить возможность вывода хода номер n (номер задается пользователем)*/
 
-//Задание 3
-
-console.log("Задание 3");
-function countBasketPrice(basket) {
-    let funBasketPrice = 0;
-    for (let prod of basket) {
-        funBasketPrice += prod.price;
-    }
-    return funBasketPrice;
-}
-
-console.log("Стоимость корзины: " + countBasketPrice(basket) + " р");
