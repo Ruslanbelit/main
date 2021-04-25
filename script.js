@@ -1,26 +1,34 @@
-//Задание 1
-
-console.log("Задание 1");
-var max = 999;
-var calculation = {
-    число: +prompt("Введите число от 0-999"),
-    еденицы: 0,
-    десятки: 0,
-    сотни: 0,
+let items = document.getElementsByClassName('item'),
+    recycle = document.getElementById('recycle'),
+    infotext = document.getElementById('infotext'),
+    summ = document.getElementsByClassName('summ'),
+    del_button = document.getElementsByClassName('del_button')
+function addItem() {
+    infotext.style.display = 'none';
+    let item_clone = this.parentElement.cloneNode(true);
+    recycle.appendChild(item_clone)
+    let prices = recycle.getElementsByClassName('price')
+       totalprice = 0;
+        for (let j = 0; j<prices.length;j++){
+            totalprice = totalprice + Number(prices[j].innerHTML);
+        }
+    console.log('TOTAL PRICE', totalprice);
+    summ[0].innerHTML = 'TOTAL PRICE '+ totalprice;
+}
+let item_button = document.getElementsByClassName('item_button');
+for (var i = 0; i < item_button.length; i++) {
+    item_button[i].onclick = addItem;
 };
-if (calculation.число <= 9){
-    calculation.число = calculation.еденицы;
-} 
-else if (calculation.число <= 999){
-    calculation.сотни = Math.floor(calculation.число / 100 % 10);
-    calculation.десятки = Math.floor(calculation.число / 10 % 10);
-    calculation.еденицы = Math.floor(calculation.число % 10);
+let buttonClear = document.getElementById('clear');
+buttonClear.onclick = function () {
+    recycle.innerHTML = ''
+    recycle.appendChild(infotext)
+    infotext.style.display = 'block';
+    summ[0].innerText = '';
 }
-else {
-    calculation.число = 0;
-    console.log("Введено неверное число");
+function delItem() {
+    this.parentElement.remove()
 }
-console.log(calculation);
-
-/*2. Для игры, реализованной на уроке, добавить возможность вывода хода номер n (номер задается пользователем)*/
-
+for (var i = 0; i < del_button.length; i++) {
+    del_button[i].onclick = delItem;
+}
