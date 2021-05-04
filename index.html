@@ -1,194 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>Задание 2</title>
-    <style>
-        button {
-            font-family: sans-serif;
-            display: block;
-            color: white;
-            font-size: 17px;
-            font-weight: 400;
-            text-align: justify;
-            text-decoration: none;
-            background-color: purple;
-            width: 132px;
-            height: auto;
-            padding: 10px;
-            text-align: center;
-            margin: 5px;
-            text-transform: uppercase;
-        }
-
-        button:hover {
-            color: purple;
-            background-color: white;
-        }
-
-        p {
-            color: #010101;
-            font-size: 26px;
-            font-weight: 300;
-            line-height: 24px;
-            text-align: center;
-        }
-
-        .item p {
-            color: rebeccapurple;
-            font-size: 26px;
-            font-weight: 300;
-            line-height: 24px;
-            text-align: center;
-            border: 1px solid black;
-            background-color: white;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        .Container {
-            width: 1280px;
-            margin: 0 auto;
-            background-color: White;
-            height: 100%;
-            border-right: 4px solid black;
-            border-left: 4px solid black;
-            height: 2000px;
-        }
-
-        .summ {
-            font-family: sans-serif;
-            color: #010101;
-            font-size: 16px;
-            font-weight: 700;
-            line-height: 24px;
-            text-align: center;
-            width: 300px;
-            height: 100px
-        }
-
-        .Recycle {
-
-            margin-left: 0 auto;
-        }
-
-        .Recycle h1 {
-            padding-left: 200px;
-        }
-
-        #recycle {
-            width: auto;
-            height: auto;
-            border: 2px solid red;
-            margin: 5%;
-            display: flex;
-            flex-wrap: wrap;
-
-        }
-
-        #recycle .item_button {
-            display: none;
-        }
-
-        .del_button {
-            display: none;
-        }
-
-        #recycle .del_button {
-            display: block;
-        }
-
-        .Items {
-            width: auto;
-            display: flex;
-            padding: 5%;
-            height: 454px;
-            justify-content: space-between;
-            background-image: purple;
-            background-repeat: no-repeat;
-        }
-
-        #recycleButton {
-            float: right;
-        }
-
-        h1 {
-            font-family: sans-serif;
-            color: #000000;
-            font-size: 40px;
-            font-weight: 400;
-            line-height: 49.542px;
-            text-align: center;
-        }
-
-        .infoblock {
-            float: right;
-        }
-
-    </style>
-    <script src="script.js" defer></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
-
 <body>
-    <div id='container' class='Container'>
-        <h1>Наша лучшая продукция</h1>
-        <div class='Items'>
-            <div class='item' id='01' onclick>
-                <img src='small/image1.jpg'><br>
-                <p class='price' id='1'>1000 руб.</p>
-                <button class='item_button'>купить</button>
-                <button class='del_button'>удалить</button>
-            </div>
-            <div class='item' id='02' onclick>
-                <img src='small/image2.jpg'><br>
-                <p class='price' id='2'>2000 руб.</p>
-                <button class='item_button'>купить</button>
-                <button class='del_button'>удалить</button>
-            </div>
-            <div class='item' id='03'>
-                <img src='small/image3.jpg' onclick><br>
-                <p class='price' id='3'>3000 руб.</p>
-                <button class='item_button'>купить</button>
-                <button class='del_button'>удалить</button>
-            </div>
-            <div class='item' id='04'>
-                <img src='small/image4.jpg' onclick><br>
-                <p class='price' id='4'>4000 руб.</p>
-                <button class='item_button'>купить</button>
-                <button class='del_button'>удалить</button>
-            </div>
-            <div class='item' id='05'>
-                <img src='small/image5.jpeg' onclick><br>
-                <p class='price' id='5'>5000 руб.</p>
-                <button class='item_button'>купить</button>
-                <button class='del_button'>удалить</button>
-            </div>
-        </div>
-
-        <div class='RecycleContentFields'>
-            <h1>Наполнение карзины</h1>
-            <div class='recycleContent'>
-                <address></address>
-            </div>
-            <div class='infoblock'>
-                <p class='summ'>Общая стоимость</p>
-                <button id='clear'>Очистить карзину</button>
-
-            </div><br>
-            <div id='recycle' onclick>
-                <div id='infotext'>Ваша карзина пуста!</div>
-
-            </div>
-        </div>
-
-    </div>
+    <script>
+        //ЗАДАНИЕ 1
+        //затрудняюс ответить, но я думаю, что я бы воспользовался замыканием при воврате змейки на начальные координаты в различных моментах т.е. при кнопке "сдаться", "конце игры" или если вы начинаете игру заново
 
 
 
+
+
+
+        
+        //ЗАДАНИЕ 2
+        var a = 2;
+        if (!(a in window)) {
+            var a = 1;
+        }
+        alert(a);
+        //undefined, так как переменная (a) является string. Если в условии прописывать (a) без кавычек, то получим такой же результат. Чтобы код работал переменую (a) необходимо объявить раньше условия.
+
+        var b = function a(x) {
+            x && a(--x);
+        };
+        alert(a);
+        //Переменная (a) нигде не объявлена, из-за этого функция не имеет смысла (код невалидный).
+
+        function a(x) {
+            return x * 2;
+        }
+        var a;
+        alert(a);
+        //Выдаст тело функции, никакой аргумент в функцию не был передан, если запросить alert(a(2)); - выдаст 4
+
+
+        function b(x, y, a) {
+            arguments[2] = 10; // Это присвоение второй аргументу в функции значения, т.е. а = 10
+            alert(a);
+        }
+        b(1, 2, 3);
+       //не смотря на то, что при вызове функции b() в качестве аргумента (а) задано значение 3, внутри функции есть присваивание а = 10,
+
+        function a() {
+            alert(this);
+        }
+        a.call(null);
+        //Так как call() не передает ни функцию, ни агрументы, а только null, то функция a() выводит alert ссылаясь на cаму страницу.
+    </script>
 </body>
-
 </html>
